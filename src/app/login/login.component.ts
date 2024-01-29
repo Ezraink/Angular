@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ReactiveFormsModule,FormGroup, FormBuilder,  Validators } from '@angular/forms';
+import { FormGroup, FormBuilder,  Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log ("Form Submit")
 
     }
 }
