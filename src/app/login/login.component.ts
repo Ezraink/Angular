@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder,  Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   standalone: true,
-  imports:[FormsModule,ReactiveFormsModule]
+  imports:[FormsModule,ReactiveFormsModule,HttpClientModule,HttpClient]
 })
 export class LoginComponent implements OnInit {
   LoginFrm : FormGroup;
@@ -24,8 +25,10 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
     
   onSubmit() {
-    if (this.LoginFrm) {
-      console.log('Form Data:', this.LoginFrm.value);
-    }
+      if (this.LoginFrm.valid) {
+    
+        const apiUrl = 'https://apiurl/login';
+        const formData = this.LoginFrm.value;
   }
+}
 }
