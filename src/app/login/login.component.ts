@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder,  Validators } from '@angular/forms';
+import { FormGroup, FormBuilder,  Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
+  standalone: true,
+  imports:[FormsModule,ReactiveFormsModule]
 })
 export class LoginComponent implements OnInit {
   LoginFrm : FormGroup;
@@ -13,12 +15,17 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder : FormBuilder) {
     this.LoginFrm = this.formBuilder.group({
       username: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
+
   }); 
+
   }
 
-  ngOnInit() {
-    console.log ("Form Submit")
-
+  ngOnInit() {}
+    
+  onSubmit() {
+    if (this.LoginFrm) {
+      console.log('Form Data:', this.LoginFrm.value);
     }
+  }
 }
