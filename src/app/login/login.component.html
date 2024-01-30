@@ -1,11 +1,11 @@
-<form class="bg-dark"  [formGroup]="LoginFrm"   >
+<form class="bg-dark"  [formGroup]="LoginFrm" role="form" role="form" (ngSubmit)="onSubmit()">
   <h3>Login Here</h3>
 
   <label for="username">Username</label>
-  <input type="text" placeholder="Email or Phone" id="username"  formControlName="LoginFrm.username">
+  <input type="text" placeholder="Email or Phone" id="username"  formControlName="username">
 
   <label for="password">Password</label>
-  <input type="password" placeholder="Password" id="password" formControlName="LoginFrm.password">
+  <input type="password" placeholder="Password" id="password" formControlName="password">
 
   <button type="submit" class="text-dark">Log In</button>
 </form>
